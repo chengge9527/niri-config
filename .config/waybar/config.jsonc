@@ -11,7 +11,8 @@
       "$HOME/.config/waybar/modules.jsonc"
    ],
    "modules-left": [
-      "niri/workspaces"
+      "niri/workspaces",
+      "niri/window"
    ],
    "modules-center": [
       "clock"

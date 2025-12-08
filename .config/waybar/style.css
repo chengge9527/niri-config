@@ -53,6 +53,7 @@ window#waybar {
 
 #clock,
 #cpu,
+#memory,
 #pulseaudio,
 #tray {
    border-radius: 4px;
@@ -68,8 +69,12 @@ window#waybar {
    color: #BB9AF7;
 }
 
+#memory {
+   color: #bb9af7;
+}
+
 #pulseaudio {
-   color: #CCCCCC;
+   color: #bb9af7;
 }
 
 #tray {

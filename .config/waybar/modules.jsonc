@@ -10,6 +10,11 @@
       }
    },
 
+   "niri/window": {
+     "format": " {app_id}",
+     "max-length": 80,
+   },
+
    "clock": {
       "format": "{:%H:%M}",
       "format-alt": "{:%Y-%m-%d %A}",
@@ -30,7 +35,6 @@
       }
    },
 
-
    "cpu": {
         "interval": 5,
         "format": " {usage}% ",
@@ -49,11 +53,9 @@
       "on-click": "pavucontrol -t 3",
       "format-muted": "",
       "format-icons": {
-         "headphones": "",
-         "headset": "",
-         "default": ["","",""]
+         "default": ["","","",""]
       },
-      "tooltip": false
+      "tooltip": true
    },
 
    "tray": {
