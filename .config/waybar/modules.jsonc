@@ -1,0 +1,65 @@
+{
+   "niri/workspaces": {
+      "format": "{icon}",
+      "format-icons": {
+         "browser": "󰈹",
+         "chat": "",
+         "code": "",
+         "create": "",
+         "music": ""
+      }
+   },
+
+   "clock": {
+      "format": "{:%H:%M}",
+      "format-alt": "{:%Y-%m-%d %A}",
+      "tooltip-format": "<small>{calendar}</small>",
+      "calendar": {
+         "mode": "year",
+         "mode-mon-col": 3,
+         "weeks-pos": "right",
+         "on-scroll": "month",
+         "on-click-right": "mode",
+         "format": {
+            "months": "<span foreground='#ffead3'><b>{}</b></span>",
+            "days": "<span foreground='#ecc6d9'><b>{}</b></span>",
+            "weeks": "<span foreground='#99ffdd'><b>W{}</b></span>",
+            "weekdays": "<span foreground='#ffcc66'><b>{}</b></span>",
+            "today": "<span foreground='#ff6699'><b><u>{}</u></b></span>"
+         }
+      }
+   },
+
+
+   "cpu": {
+        "interval": 5,
+        "format": " {usage}% ",
+        "tooltip": true
+    },
+
+   "memory": {
+        "interval": 30,
+        "format": " {percentage}% ",
+        "format-alt": " {used:0.1f}G/{total:0.1f}G ",
+        "max-length": 100
+    },
+
+   "pulseaudio": {
+      "format": "{icon} {volume}%",
+      "on-click": "pavucontrol -t 3",
+      "format-muted": "",
+      "format-icons": {
+         "headphones": "",
+         "headset": "",
+         "default": ["","",""]
+      },
+      "tooltip": false
+   },
+
+   "tray": {
+      "icon-size": 15,
+      "spacing": 8
+   },
+   
+}
+

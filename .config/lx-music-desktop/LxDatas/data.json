@@ -1,0 +1,21 @@
+{
+	"viewPrevState": {
+		"url": "/setting",
+		"query": {}
+	},
+	"lastStartInfo": "2.12.0",
+	"listScrollPosition": {
+		"default": 0
+	},
+	"searchSetting": {
+		"temp_source": "kw",
+		"source": "wy",
+		"type": "music"
+	},
+	"playInfo": {
+		"time": 0,
+		"maxTime": 207.6,
+		"listId": "default",
+		"index": 1
+	}
+}

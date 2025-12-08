@@ -1,0 +1,78 @@
+/* 
+   Importing colors from theme directory
+*/
+
+@import url("../waybar/colors-waybar.css");
+
+*{
+   font-size: 17px;
+   font-family: Adwaita Mono;
+   font-weight: 600;
+   min-height: 0;
+   padding-top: 0px;
+   padding-bottom: 0px;
+}
+
+window#waybar {
+   background: rgba(0, 0, 0, 0.3);
+   color: @fg_color;
+}
+
+#workspaces button {
+   background: @bg_color;
+   color: @fg_color;
+   margin: 2px;
+   padding: 0px;
+   border-radius: 4px;
+}
+
+#workspaces button:hover {
+   background: @highlight_color;
+   color: @invert_color;
+   box-shadow: inherit;
+   text-shadow: inherit;
+}
+
+#workspaces button.focused {
+   background: @highlight_color;
+   color: @invert_color;
+}
+
+#workspaces button.urgent {
+   background: @urgent_color;
+   color: @invert_color;
+}
+
+#scratchpad {
+   background: @highlight_color;
+   color: @invert_color;
+   margin: 0px 0px 2px 0px;
+   padding: 0px 8px;
+   border-radius: 0px;
+}
+
+#clock,
+#cpu,
+#pulseaudio,
+#tray {
+   border-radius: 4px;
+   margin: 2px;
+   padding: 0px 4px;
+}
+
+#clock {
+   color: #ffcc66;
+}
+
+#cpu {
+   color: #BB9AF7;
+}
+
+#pulseaudio {
+   color: #CCCCCC;
+}
+
+#tray {
+   background-color: @tray_color;
+}
+
