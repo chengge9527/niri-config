@@ -1,9 +1,9 @@
 # nifi-config
 中科大源：  
-  Server = https://mirrors.ustc.edu.cn/archlinux/$repo/os/$arch  
+Server = https://mirrors.ustc.edu.cn/archlinux/$repo/os/$arch  
 cn源：  
-  [archlinuxcn]  
-  Server = https://mirrors.ustc.edu.cn/archlinuxcn/$arch  
+[archlinuxcn]  
+Server = https://mirrors.ustc.edu.cn/archlinuxcn/$arch  
 
 
 
