@@ -14,6 +14,8 @@ kitty firefox waypaper pipewire-pulse pavucontrol swayidle swww swaylock-effects
 
 查看字体家族  
 fc-list : family | sort -u  
+刷新字体缓存  
+fc-cache -fv  
 
 查看僵尸进程  
 ps -eo pid,ppid,stat,cmd | awk '$3 ~ /^Z/ {print}'  
