@@ -77,6 +77,18 @@ window#waybar {
    color: #7AA2F7;
 }
 
+
+#idle_inhibitor {
+    color: #7AA2F7;
+    padding: 0px 0.36em; /* 6px */
+}
+#idle_inhibitor.activated{
+    padding: 0px 0.4em 0px 0.4em;
+}
+
+
+
+
 #tray {
    color: #7AA2F7;
 }
