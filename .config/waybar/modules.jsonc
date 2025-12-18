@@ -57,8 +57,6 @@
       "tooltip": true
    },
 
-
-  //禁止熄屏
   "idle_inhibitor": {
     "format": "{icon}",
     "format-icons": {
@@ -68,11 +66,6 @@
     "tooltip-format-activated": "idle Enabled",
     "tooltip-format-deactivated": "idle Disabled",
   },
-
-
-
-
-
 
    "tray": {
       "icon-size": 15,
