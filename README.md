@@ -6,7 +6,7 @@ cn源：
 Server = https://mirrors.ustc.edu.cn/archlinuxcn/$arch  
 
 挂载硬盘 fstab:  
-# /dev/sdc:
+  /dev/sdc:
 UUID=5abf737b-a4a6-439a-9b2d-89a7d2c15787       /home/monkey/hdd-500g   ext4   rw,relatime   0 2  
 
 
