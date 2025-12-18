@@ -19,32 +19,32 @@ window#waybar {
 }
 
 #workspaces button {
-   color: @fg_color;
+   color: #C0CAF5;
    margin: 2px;
    padding: 0px;
    border-radius: 2px;
 }
 
 #workspaces button:hover {
-   background: @highlight_color;
-   color: @invert_color;
+   background: #7AA2F7;
+   color: #1A1B26;
    box-shadow: inherit;
    text-shadow: inherit;
 }
 
 #workspaces button.focused {
-   background: @highlight_color;
-   color: @invert_color;
+   background: #7AA2F7;
+   color: #1A1B26;
 }
 
 #workspaces button.urgent {
-   background: @urgent_color;
-   color: @invert_color;
+   background: #F7768E;
+   color: #1A1B26;
 }
 
 #scratchpad {
-   background: @highlight_color;
-   color: @invert_color;
+   background: #7AA2F7;
+   color: #1A1B26;
    margin: 0px 0px 2px 0px;
    padding: 0px 8px;
    border-radius: 0px;
