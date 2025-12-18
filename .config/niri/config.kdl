@@ -5,7 +5,7 @@ include "binds.kdl"
 // Check the wiki for a full description of the configuration:
 // https://yalter.github.io/niri/Configuration:-Introduction
 environment {
-	LC_MESSAGES "zh_CN.UTF-8"
+ 	LC_MESSAGES "zh_CN.UTF-8"
 }
 
 // Input device configuration.

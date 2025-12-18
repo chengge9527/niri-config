@@ -38,14 +38,14 @@
         "interval": 5,
         "format": " {usage}% ",
         "tooltip": true
-   },
+    },
 
    "memory": {
         "interval": 30,
         "format": " {percentage}% ",
         "format-alt": " {used:0.1f}G/{total:0.1f}G ",
         "max-length": 100
-   },
+    },
 
    "pulseaudio": {
       "format": "{icon} {volume}%",
@@ -57,7 +57,7 @@
       "tooltip": true
    },
 
-   "idle_inhibitor": {
+  "idle_inhibitor": {
     "format": "{icon}",
     "format-icons": {
       "activated": "",
@@ -65,7 +65,7 @@
     },
     "tooltip-format-activated": "idle Enabled",
     "tooltip-format-deactivated": "idle Disabled",
-   },
+  },
 
    "tray": {
       "icon-size": 15,
@@ -73,4 +73,3 @@
    },
    
 }
-
