@@ -76,10 +76,10 @@ window#waybar {
    color: #7AA2F7;
 }
 
-#idle_inhibitor {
+#inhibitor {
     color: #E0E0E0;
 }
-#idle_inhibitor.activated{
+#inhibitor.activated{
     color: #FF8900;
 }
 
