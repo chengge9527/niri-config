@@ -21,7 +21,7 @@
       "cpu",
       "memory",
       "pulseaudio",
-      "idle_inhibitor",
+      "inhibitor",
       "tray"
    ]
 }
