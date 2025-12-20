@@ -57,14 +57,13 @@
       "tooltip": true
    },
 
-   "idle_inhibitor": {
-     "format": "{icon}",
-     "format-icons": {
-       "activated": "",
-       "deactivated": "󰤄",
-     },
-     "tooltip-format-activated": "idle Enabled",
-     "tooltip-format-deactivated": "idle Disabled",
+   "inhibitor": {
+      "what": "sleep", // 可选值：idle, sleep, shutdown, handle-lid-switch 等
+      "format": "{icon}",
+      "format-icons": {
+         "activated": "",
+         "deactivated": "󰤄"
+      },
    },
 
    "tray": {
