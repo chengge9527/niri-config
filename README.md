@@ -17,5 +17,8 @@ fc-list : family | sort -u
 刷新字体缓存  
 fc-cache -fv  
 
+清理孤包  
+sudo pacman -Rns $(pacman -Qdtq)  
+
 查看僵尸进程  
 ps -eo pid,ppid,stat,cmd | awk '$3 ~ /^Z/ {print}'  
