@@ -252,6 +252,7 @@ layout {
 spawn-at-startup "/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1"
 spawn-at-startup "waybar"
 spawn-at-startup "swww-daemon"
+spawn-at-startup "waypaper" "--random"
 spawn-at-startup "mako"
 spawn-at-startup "fcitx5"
 spawn-at-startup "~/.config/niri/scripts/swayidle.sh"

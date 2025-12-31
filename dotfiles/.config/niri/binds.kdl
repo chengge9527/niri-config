@@ -17,8 +17,9 @@ binds {
     Mod+T hotkey-overlay-title="Open a Terminal: kitty" { spawn "kitty"; }
     Mod+D hotkey-overlay-title="Run an Application: fuzzel" { spawn "fuzzel"; }
     Mod+W hotkey-overlay-title="chrome" { spawn "google-chrome-stable"; }
-    Mod+F1 hotkey-overlay-title="开关输入法" { spawn-sh "pkill fcitx5 || fcitx5 "; }
-    Mod+F2 hotkey-overlay-title="重启waybar" { spawn-sh "pkill waybar || true && waybar"; }
+    Mod+F1 hotkey-overlay-title="开关输入法" { spawn-sh "pkill fcitx5 || fcitx5"; }
+    // Mod+F2 hotkey-overlay-title="重启waybar" { spawn-sh "pkill waybar || true && waybar"; }
+    Mod+F2 hotkey-overlay-title="重启waybar" { spawn-sh "pkill waybar || waybar"; }
     Mod+F12 hotkey-overlay-title="关闭waydroid" { spawn-sh "waydroid session stop"; }
     Mod+Alt+M hotkey-overlay-title="休眠" { spawn "~/.config/niri/scripts/suspend.sh"; }
     Super+Alt+L hotkey-overlay-title="Lock the Screen: swaylock" { spawn "swaylock"; }
