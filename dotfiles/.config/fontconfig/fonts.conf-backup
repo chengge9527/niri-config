@@ -1,25 +1,35 @@
 <?xml version="1.0"?>
 <!DOCTYPE fontconfig SYSTEM "fonts.dtd">
 <fontconfig>
-  
+
+  <!-- 1. 默认无衬线字体 (Sans-serif) -->
   <alias>
     <family>sans-serif</family>
     <prefer>
-      <family>Noto Sans CJK SC</family>
-      <family>Noto Sans CJK TC</family>
-      <family>Noto Sans CJK JP</family>
+      <family>Noto Sans CJK SC</family> <!-- 思源黑体 -->
+      <family>Microsoft YaHei</family>   <!-- 微软雅黑 -->
+      <family>Droid Sans Fallback</family>
     </prefer>
   </alias>
-  
+
+  <!-- 2. 默认衬线字体 (Serif) -->
   <alias>
-      <family>serif</family>
-      <prefer>
-        <family>Noto Serif CJK SC</family>
-        <family>Noto Serif CJK TC</family>
-        <family>Noto Serif CJK JP</family>
-      </prefer>
+    <family>serif</family>
+    <prefer>
+      <family>Noto Serif CJK SC</family> <!-- 思源宋体 -->
+      <family>SimSun</family>            <!-- 中易宋体 -->
+    </prefer>
   </alias>
-  
+
+  <!-- 3. 默认等宽字体 (Monospace) -->
+  <alias>
+    <family>monospace</family>
+    <prefer>
+      <family>JetBrains Mono</family>    <!-- 英文等宽 -->
+      <family>Noto Sans Mono CJK SC</family> <!-- 中文等宽回退 -->
+    </prefer>
+  </alias>
+
   <!-- 4. 渲染优化设置 -->
   <match target="font">
     <edit name="antialias" mode="assign"><bool>true</bool></edit>   <!-- 开启抗锯齿 -->
