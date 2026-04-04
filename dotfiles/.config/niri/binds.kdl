@@ -18,16 +18,16 @@ binds {
     Mod+D hotkey-overlay-title="Run an Application: fuzzel" { spawn "fuzzel"; }
     Mod+W hotkey-overlay-title="chrome" { spawn "google-chrome-stable"; }
     Mod+F1 hotkey-overlay-title="开关输入法" { spawn-sh "pkill fcitx5 || fcitx5"; }
-    // Mod+F2 hotkey-overlay-title="重启waybar" { spawn-sh "pkill waybar || true && waybar"; }
-    Mod+F2 hotkey-overlay-title="重启waybar" { spawn-sh "pkill waybar || waybar"; }
+    Mod+F2 hotkey-overlay-title="开关waybar" { spawn-sh "pkill waybar || waybar"; }
     Mod+F12 hotkey-overlay-title="关闭waydroid" { spawn-sh "waydroid session stop"; }
     Mod+Alt+M hotkey-overlay-title="休眠" { spawn "~/.config/niri/scripts/suspend.sh"; }
     Super+Alt+L hotkey-overlay-title="Lock the Screen: swaylock" { spawn "swaylock"; }
+    Super+Alt+S hotkey-overlay-title="截屏" { spawn "~/.config/niri/scripts/screenshot.sh"; } 
 
     // Use spawn-sh to run a shell command. Do this if you need pipes, multiple commands, etc.
     // Note: the entire command goes as a single argument. It's passed verbatim to `sh -c`.
     // For example, this is a standard bind to toggle the screen reader (orca).
-    Super+Alt+S allow-when-locked=true hotkey-overlay-title=null { spawn-sh "pkill orca || exec orca"; }
+    // Super+Alt+S allow-when-locked=true hotkey-overlay-title=null { spawn-sh "pkill orca || exec orca"; }
 
     // Example volume keys mappings for PipeWire & WirePlumber.
     // The allow-when-locked=true property makes them work even when the session is locked.
