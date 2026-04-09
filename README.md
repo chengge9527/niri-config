@@ -11,6 +11,8 @@ kitty intel-ucode vulkan-radeon firefox waypaper pipewire-pulse pavucontrol sway
 fcitx5-im  fcitx5-chinese-addons  
 字体  
 ttf-dejavu ttf-jetbrains-mono-nerd noto-fonts adobe-source-han-sans-otc-fonts noto-fonts-cjk noto-fonts-emoji  
+截图软件  
+grim swappy slurp  
 
 查看字体家族  
 fc-list : family | sort -u  
