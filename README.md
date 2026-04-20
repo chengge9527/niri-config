@@ -24,3 +24,7 @@ sudo pacman -Rns $(pacman -Qdtq)
 
 查看僵尸进程  
 ps -eo pid,ppid,stat,cmd | awk '$3 ~ /^Z/ {print}'  
+
+重启网卡  
+nmcli device disconnect eno1  
+nmcli device connect eno1  
