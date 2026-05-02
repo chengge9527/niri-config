@@ -32,4 +32,8 @@ nmcli device connect eno1
 lutris  
   魔兽争霸 中文输入法环境变量  
   LANG=zh_CN.UTF-8  
-  PROTON_ENABLE_WAYLAND=1 
+  PROTON_ENABLE_WAYLAND=1  
+
+  传奇  
+  sudo pacman -S --needed lib32-freetype2 lib32-libtheora lib32-libvisual lib32-orc  
+  sudo pacman -S --needed lib32-mesa lib32-vulkan-intel lib32-vulkan-radeon   
