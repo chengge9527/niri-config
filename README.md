@@ -31,5 +31,5 @@ nmcli device connect eno1
 
 lutris  
   魔兽争霸 中文输入法环境变量  
-  LANG=zh_CN.UTF-8 
+  LANG=zh_CN.UTF-8  
   PROTON_ENABLE_WAYLAND=1 
