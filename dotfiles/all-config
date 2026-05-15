@@ -1,0 +1,14 @@
+waydroid-config:  
+	sudo waydroid init  
+	waydroid session start  
+	waydroid show-full-ui  
+	安装转译文件:
+		git clone https://github.com/casualsnek/waydroid_script  
+		cd waydroid_script  
+		python3 -m venv venv  
+		venv/bin/pip install -r requirements.txt  
+		sudo venv/bin/python3 main.py  
+	waydroid app install XXX.apk 
+	waydroid prop set persist.waydroid.width 1120  
+	waydroid prop set persist.waydroid.height 630  
+
