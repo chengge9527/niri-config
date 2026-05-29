@@ -28,3 +28,5 @@ ps -eo pid,ppid,stat,cmd | awk '$3 ~ /^Z/ {print}'
 重启网卡  
 nmcli device disconnect eno1  
 nmcli device connect eno1 
+
+127.0.1.1        archlinux.localdomain   archlinux  
