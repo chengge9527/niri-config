@@ -5,7 +5,7 @@ cn源：
 [archlinuxcn]  
 Server = https://mirrors.ustc.edu.cn/archlinuxcn/$arch  
 
-kitty intel-ucode vulkan-radeon firefox waypaper pipewire-pulse pavucontrol swayidle awww swaylock-effects libnotify mako polkit-gnome  
+kitty intel-ucode vulkan-radeon firefox waypaper pipewire-pulse pavucontrol swayidle awww swaylock-effects libnotify mako polkit-gnome xwayland-satellite  
 
 输入法  
 fcitx5-im  fcitx5-chinese-addons  
