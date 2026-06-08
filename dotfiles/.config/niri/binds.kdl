@@ -23,7 +23,7 @@ binds {
     Mod+Alt+M hotkey-overlay-title="休眠" { spawn "~/.config/niri/scripts/suspend.sh"; }
     Super+Alt+L hotkey-overlay-title="Lock the Screen: swaylock" { spawn "swaylock"; }
 //    Super+Alt+S hotkey-overlay-title="截屏" { spawn "~/.config/niri/scripts/screenshot.sh"; } 
-    Super+Alt+S hotkey-overlay-title="截屏" {spawn-sh "awww img $(find ~/Pictures/Wallpapers -type f | shuf -n 1) --transition-type any --transition-duration 2.0 --transition-step 90"; } 
+    Super+Alt+S hotkey-overlay-title="切换壁纸" {spawn-sh "awww img $(find ~/Pictures/Wallpapers -type f | shuf -n 1) --transition-type any --transition-duration 2.0 --transition-step 90"; } 
 
     // Use spawn-sh to run a shell command. Do this if you need pipes, multiple commands, etc.
     // Note: the entire command goes as a single argument. It's passed verbatim to `sh -c`.
