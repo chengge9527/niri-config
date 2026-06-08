@@ -24,6 +24,7 @@ binds {
     Super+Alt+L hotkey-overlay-title="Lock the Screen: swaylock" { spawn "swaylock"; }
 //    Super+Alt+S hotkey-overlay-title="截屏" { spawn "~/.config/niri/scripts/screenshot.sh"; } 
     Super+Alt+S hotkey-overlay-title="截屏" {spawn-sh "awww img $(find ~/Pictures/ -type f | shuf -n 1) --transition-type any --transition-duration 2.0 --transition-step 90"; } 
+
     // Use spawn-sh to run a shell command. Do this if you need pipes, multiple commands, etc.
     // Note: the entire command goes as a single argument. It's passed verbatim to `sh -c`.
     // For example, this is a standard bind to toggle the screen reader (orca).
