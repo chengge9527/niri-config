@@ -11,41 +11,38 @@
 //   },
 
    "niri/window": {
-     "format": " {app_id}",
+     "format": " {app_id}",
      "max-length": 80
    },
 
    "clock": {
-      "format": "{:%m-%d %H:%M}",
-      "tooltip-format": "<small>{calendar}</small>",
-      "calendar": {
-         "mode": "year",
-         "mode-mon-col": 3,
-         "weeks-pos": "right",
-         "on-scroll": "month",
-         "on-click-right": "mode",
-         "format": {
-            "months": "<span foreground='#ffead3'><b>{}</b></span>",
-            "days": "<span foreground='#ecc6d9'><b>{}</b></span>",
-            "weeks": "<span foreground='#99ffdd'><b>W{}</b></span>",
-            "weekdays": "<span foreground='#ffcc66'><b>{}</b></span>",
-            "today": "<span foreground='#ff6699'><b><u>{}</u></b></span>"
-         }
-      }
+       "tooltip-format": "<tt><small>{calendar}</small></tt>",
+       "format": "{:%m-%d %H:%M}",
+       "calendar": {
+           "mode": "year",
+           "weeks-pos": "right",
+           "mode-mon-col": 3,
+           "format": {
+               "months":   "<span color='#acb0d0'><b>{}</b></span>",
+               "weeks":    "<span color='#7aa2f7'><b>W{}</b></span>",
+               "weekdays": "<span color='#e0af68'><b>{}</b></span>",
+               "days":     "<span color='#acb0d0'><b>{}</b></span>",
+               "today":    "<span color='#41a6b5'><b><u>{}</u></b></span>"
+           }
+       }
    },
 
    "network": {
+     "interval": 1,
      "format": "{ifname}",
-     "format-wifi": "  {signalStrength}%  {bandwidthDownBytes}  {bandwidthUpBytes} ",
-     "format-ethernet": "   {bandwidthDownBytes}  {bandwidthUpBytes} ",
+     "format-wifi": "  {signalStrength}%  {bandwidthDownBytes}  {bandwidthUpBytes} ",
+     "format-ethernet": " {bandwidthDownBytes}  {bandwidthUpBytes}",
      "format-disconnected": "󰲛 ",
      "tooltip-format": "  {ifname} via {gwaddri}",
      "tooltip-format-wifi": "   {essid} ({signalStrength}%)",
      "tooltip-format-ethernet": "  {ifname} ({ipaddr}/{cidr})",
      "tooltip-format-disconnected": "Disconnected",
-     "max-length": 50,
-     "interval": 1,
-     "on-click": "nm-connection-editor"
+     "max-length": 50
    },
 
    "cpu": {

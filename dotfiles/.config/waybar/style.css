@@ -7,12 +7,16 @@
    font-family: Liberation Mono;
    font-weight: 600;
    min-height: 0;
-   padding-top: 0px;
-   padding-bottom: 0px;
+   padding: 0px 5px 0px 5px;
 }
 
 window#waybar {
-   background: rgba(0, 0, 0, 0.8);
+   background: rgba(0, 0, 0, 0.6);
+   /*
+   border: 1px solid rgba(138, 231, 255, 1);
+   */
+   border-radius: 10px;
+   transition: none;
    color: #8AE7FF;
 }
 
@@ -49,10 +53,12 @@ window#waybar {
 }
 
 #clock,
+#network,
 #cpu,
 #memory,
 #pulseaudio,
-#idle_inhibitor,
+#inhibitor,
+
 #tray {
    border-radius: 4px;
    margin: 2px;
@@ -60,29 +66,21 @@ window#waybar {
 }
 
 #clock {
-   color: #8AE7FF;
+   padding: 3px 8px 0px 8px;
    font-size: 18px;
 }
 
-#cpu {
-   color: #8AE7FF;
-}
-
-#memory {
-   color: #8AE7FF;
-}
-
-#pulseaudio {
-   color: #8AE7FF;
-}
-
 #inhibitor {
-    color: #E0E0E0;
-}
-#inhibitor.activated{
-    color: #FF8900;
+   color: #E0E0E0;
 }
 
-#tray {
-   color: #8AE7FF;
+#inhibitor.activated{
+   color: #FF8900;
+}
+
+/* 专属日历提示框的圆角与高级感配色 */
+tooltip {
+   background: rgba(0, 0, 0, 1);
+   border-radius: 8px;
+   padding: 10px;
 }
