@@ -19,11 +19,11 @@ binds {
     Mod+W hotkey-overlay-title="chrome" { spawn "google-chrome-stable"; }
     Mod+F1 hotkey-overlay-title="开关输入法" { spawn-sh "pkill fcitx5 || fcitx5"; }
     Mod+F2 hotkey-overlay-title="开关waybar" { spawn-sh "pkill waybar || waybar"; }
+    Mod+F5 hotkey-overlay-title="切换壁纸" {spawn-sh "awww img $(find ~/Pictures/Wallpapers -type f | shuf -n 1) --transition-type any --transition-duration 2.0 --transition-step 90"; } 
     Mod+F12 hotkey-overlay-title="关闭waydroid" { spawn-sh "waydroid session stop"; }
     Mod+Alt+M hotkey-overlay-title="休眠" { spawn "~/.config/niri/scripts/suspend.sh"; }
-    Super+Alt+L hotkey-overlay-title="Lock the Screen: swaylock" { spawn "swaylock"; }
+    Mod+Alt+L hotkey-overlay-title="锁定屏幕" { spawn "swaylock"; }
 //    Super+Alt+S hotkey-overlay-title="截屏" { spawn "~/.config/niri/scripts/screenshot.sh"; } 
-    Super+Alt+S hotkey-overlay-title="切换壁纸" {spawn-sh "awww img $(find ~/Pictures/Wallpapers -type f | shuf -n 1) --transition-type any --transition-duration 2.0 --transition-step 90"; } 
 
     // Use spawn-sh to run a shell command. Do this if you need pipes, multiple commands, etc.
     // Note: the entire command goes as a single argument. It's passed verbatim to `sh -c`.
@@ -259,8 +259,8 @@ binds {
     // Mod+Shift+Space { switch-layout "prev"; }
 
     Print { screenshot; }
-    Ctrl+Print { screenshot-screen; }
-    Alt+Print { screenshot-window; }
+    Ctrl+Print { screenshot-screen show-pointer=false; }
+    Alt+Print { screenshot-window show-pointer=false; }
 
     // Applications such as remote-desktop clients and software KVM switches may
     // request that niri stops processing the keyboard shortcuts defined here
