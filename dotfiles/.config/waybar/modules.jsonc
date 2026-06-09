@@ -1,19 +1,19 @@
 {
-   "niri/workspaces": {
-      "format": "{icon}",
-      "format-icons": {
-         "browser": "󰈹",
-         "chat": "",
-         "code": "",
-         "create": "",
-         "music": ""
-      }
-   },
+//   "niri/workspaces": {
+//      "format": "{icon}",
+//      "format-icons": {
+//         "browser": "󰈹",
+//         "chat": "",
+//         "code": "",
+//         "create": "",
+//         "music": ""
+//      }
+//   },
 
    "niri/window": {
      "format": " {app_id}",
      "max-length": 80
-  },
+   },
 
    "clock": {
       "format": "{:%m-%d %H:%M}",
@@ -34,8 +34,22 @@
       }
    },
 
+   "network": {
+     "format": "{ifname}",
+     "format-wifi": "  {signalStrength}%  {bandwidthDownBytes}  {bandwidthUpBytes} ",
+     "format-ethernet": "   {bandwidthDownBytes}  {bandwidthUpBytes} ",
+     "format-disconnected": "󰲛 ",
+     "tooltip-format": "  {ifname} via {gwaddri}",
+     "tooltip-format-wifi": "   {essid} ({signalStrength}%)",
+     "tooltip-format-ethernet": "  {ifname} ({ipaddr}/{cidr})",
+     "tooltip-format-disconnected": "Disconnected",
+     "max-length": 50,
+     "interval": 1,
+     "on-click": "nm-connection-editor"
+   },
+
    "cpu": {
-        "interval": 1,
+        "interval": 2,
         "format": " {usage}%",
         "tooltip": true
    },
@@ -49,7 +63,7 @@
 
    "pulseaudio": {
       "format": "{icon} {volume}",
-      "on-click": "pavucontrol -t 3",
+      "on-click": "pavucontrol",
       "format-muted": "",
       "format-icons": {
          "default": ["","","",""]
