@@ -33,10 +33,11 @@
    },
 
    "network": {
-     "interval": 1,
-     "format": "{ifname}",
-     "format-wifi": "  {signalStrength}%  {bandwidthDownBytes}  {bandwidthUpBytes} ",
-     "format-ethernet": " {bandwidthDownBytes}  {bandwidthUpBytes}",
+     "interface": "eno1",
+     "interval": 2,
+     "format": " {bandwidthDownBytes}  {bandwidthUpBytes}",
+     "format-wifi": "  {signalStrength}%  {bandwidthDownBytes}  {bandwidthUpBytes}",
+     "format-ethernet": " {bandwidthDownBytes:>}  {bandwidthUpBytes:>}",
      "format-disconnected": "󰲛 ",
      "tooltip-format": "  {ifname} via {gwaddri}",
      "tooltip-format-wifi": "   {essid} ({signalStrength}%)",
