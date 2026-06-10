@@ -3,47 +3,89 @@
 */
 
 *{
-   font-size: 15px;
+   font-size: 16px;
    font-family: Liberation Mono;
    font-weight: 600;
-   min-height: 0;
    padding: 0px 5px 0px 5px;
 }
 
+/* 清除默认的全局背景和边框 */
 window#waybar {
-   background: rgba(0, 0, 0, 0.6);
-   /*
-   border: 1px solid rgba(138, 231, 255, 1);
-   */
-   border-radius: 10px;
-   transition: none;
-   color: #8AE7FF;
+    background-color: transparent;
+    border: none;
+    color: #89b4fa;
 }
 
+/* 定位到主容器（或者直接作用于 window#waybar.main-window，取决于版本）
+   通常包裹一层 .modules-left, .modules-center, .modules-right 
+   或者直接给 waybar 内部的容器加背景 */
+
+window#waybar > box {
+    background-color: rgba(30, 30, 46, 0.9); /* 带有透明度的暗色背景 */
+    border: 1px solid rgba(255, 255, 255, 0.1); /* 淡淡 border 增加精致感 */
+    border-radius: 16px; /* 圆角，Dock 栏的核心要素 */
+    
+    /* 悬浮的核心：外边距 */
+    /* 语法：margin: 上 右 下 左; */
+    /* 下面设置：距离屏幕顶部 0，左右各留 200px 变短，距离屏幕底部 10px 实现悬浮 */
+    margin: 3px 30px 3px 30px; 
+    
+    /* 内边距，让里面的图标离 Dock 边缘有一定呼吸感  
+    padding: 1px 1px; 
+    */
+
+    /* 可选：加点阴影让悬浮感更强 */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+/* 如果你想让左中右三块模组独立成一个个小胶囊（类似无缝 Dock），可以这样： */
+/*
+.modules-left, .modules-center, .modules-right {
+    background: rgba(255,255,255,0.1);
+    border-radius: 12px;
+    padding: 0 8px;
+    margin: 2px;
+}
+*/
+
+/* 整个工作区容器 */
+#workspaces {
+    background-color: transparent;
+    margin: 0 4px;
+}
+
+/* 1. 默认状态（后台有窗口运行） */
 #workspaces button {
-   color: #CFFCFF;
-   margin: 2px;
-   padding: 0px;
-   border-radius: 2px;
+    font-size: 10px;           
+    color: #a6adc8;            /* 浅灰色，因为有窗口，所以亮度稍微高一点 */
+    padding: 0;            
+    min-width: 24px;   
+    min-height: 24px;  
+    border-radius: 50%;        
+    transition: all 0.2s ease; 
+    box-shadow: inherit;
+    text-shadow: inherit;
+    border: none;
+    background: transparent;
+    margin: 0 2px;
 }
 
+/* 2. 【新增】没有任何窗口的空工作区 */
+#workspaces button.empty {
+    color: rgba(255, 255, 255, 0.3); /* 没窗口时，颜色暗下来，降低存在感 */
+}
+
+/* 3. 鼠标悬停时 */
 #workspaces button:hover {
-   background: #8AE7FF;
-   color: #1A1B26;
-   box-shadow: inherit;
-   text-shadow: inherit;
+    color: #cdd6f4;            
 }
 
-#workspaces button.focused {
-   background: #8AE7FF;
-   color: #1A1B26;
+/* 4. 当前正在使用（激活）的工作区 */
+#workspaces button.active {
+    color: #89b4fa;            /* 亮蓝色 */
 }
 
-#workspaces button.urgent {
-   background: #F7768E;
-   color: #1A1B26;
-}
-
+/*
 #scratchpad {
    background: #7AA2F7;
    color: #1A1B26;
@@ -51,24 +93,21 @@ window#waybar {
    padding: 0px 8px;
    border-radius: 0px;
 }
+*/
 
+/* ------暂时不用------
 #clock,
 #network,
 #cpu,
 #memory,
 #pulseaudio,
 #inhibitor,
-
 #tray {
    border-radius: 4px;
    margin: 2px;
    padding: 0px 4px;
 }
-
-#clock {
-   padding: 3px 8px 0px 8px;
-   font-size: 18px;
-}
+*/
 
 #inhibitor {
    color: #E0E0E0;
