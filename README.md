@@ -1,6 +1,5 @@
 # nifi-config
 
-![项目架构图](dotfiles/Pictures/Screenshots/Screenshot_2026-06-11_21-01-31.png)
 ![项目架构图](dotfiles/Pictures/Screenshots/Screenshot_2026-06-11_21-30-53.png)
 
 
