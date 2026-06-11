@@ -1,6 +1,6 @@
 # nifi-config
 
-(Pictures/Screenshots/Screenshot_2026-06-11_21-01-31.png)
+！(Pictures/Screenshots/Screenshot_2026-06-11_21-01-31.png)
 
 
 中科大源：  
