@@ -1,6 +1,6 @@
 # nifi-config
 
-https://github.com/chengge9527/niri-config/blob/main/dotfiles/Pictures/Screenshots/Screenshot_2026-06-11_21-01-31.png  
+(Pictures/Screenshots/my-logo.png)
 
 
 中科大源：  
