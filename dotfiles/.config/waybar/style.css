@@ -3,10 +3,12 @@
 */
 
 *{
-   font-size: 16px;
    font-family: Liberation Mono;
    font-weight: 600;
-   padding: 0px 5px 0px 5px;
+}
+
+#custom-launcher {
+   margin-left: 10px;
 }
 
 /* 清除默认的全局背景和边框 */
@@ -21,18 +23,17 @@ window#waybar {
    或者直接给 waybar 内部的容器加背景 */
 
 window#waybar > box {
-    background-color: rgba(30, 30, 46, 0.9); /* 带有透明度的暗色背景 */
+    background-color: rgba(30, 30, 46, 0.8); /* 带有透明度的暗色背景 */
     border: 1px solid rgba(255, 255, 255, 0.1); /* 淡淡 border 增加精致感 */
     border-radius: 16px; /* 圆角，Dock 栏的核心要素 */
     
     /* 悬浮的核心：外边距 */
     /* 语法：margin: 上 右 下 左; */
     /* 下面设置：距离屏幕顶部 0，左右各留 200px 变短，距离屏幕底部 10px 实现悬浮 */
-    margin: 3px 30px 3px 30px; 
+    margin: 3px 60px 3px 60px; 
     
-    /* 内边距，让里面的图标离 Dock 边缘有一定呼吸感  
-    padding: 1px 1px; 
-    */
+    /* 内边距，让里面的图标离 Dock 边缘有一定呼吸感 */ 
+    padding: 3px 6px; 
 
     /* 可选：加点阴影让悬浮感更强 */
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
@@ -56,7 +57,6 @@ window#waybar > box {
 
 /* 1. 默认状态（后台有窗口运行） */
 #workspaces button {
-    font-size: 10px;           
     color: #a6adc8;            /* 浅灰色，因为有窗口，所以亮度稍微高一点 */
     padding: 0;            
     min-width: 24px;   
@@ -95,19 +95,18 @@ window#waybar > box {
 }
 */
 
-/* ------暂时不用------
-#clock,
 #network,
 #cpu,
 #memory,
 #pulseaudio,
 #inhibitor,
 #tray {
-   border-radius: 4px;
-   margin: 2px;
-   padding: 0px 4px;
+   padding: 0px 5px 0px 5px;
 }
-*/
+
+#clock {
+   font-size: 16px;
+}
 
 #inhibitor {
    color: #E0E0E0;
@@ -115,6 +114,10 @@ window#waybar > box {
 
 #inhibitor.activated{
    color: #FF8900;
+}
+
+#tray {
+   margin-right: 5px;
 }
 
 /* 专属日历提示框的圆角与高级感配色 */
