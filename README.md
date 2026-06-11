@@ -1,4 +1,8 @@
 # nifi-config
+
+https://github.com/chengge9527/niri-config/blob/main/dotfiles/Pictures/Screenshots/Screenshot_2026-06-11_21-01-31.png  
+
+
 中科大源：  
 Server = https://mirrors.ustc.edu.cn/archlinux/$repo/os/$arch  
 cn源：  
