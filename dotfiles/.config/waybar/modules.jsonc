@@ -6,14 +6,13 @@
       "tooltip": false 
    },
 
-/*
-"niri/workspaces": {
+   "niri/workspaces": {
     // 隐藏没有窗口且未激活的空白工作区，让 Dock 栏更紧凑
       "all-outputs": false,
       "current-only": false,
     
     // 点击工作区按钮时的行为
-    //  "on-click": "activate",
+      "on-click": "activate",
     
     // 显示格式：这里使用图标模式
       "format": "{icon}",
@@ -30,18 +29,7 @@
         "urgent": "󰀦"
       }
    },
-*/
 
-   "niri/workspaces": {
-      "all-outputs": false,
-      "format": "{icon}",
-      "format-icons": {
-         "empty": "",      // 没有任何窗口的空工作区：显示空心圆
-         "default": "",    // 有窗口但未聚焦（这就是你想要的后台状态）：显示带点的圆
-         "active": ""      // 当前正在使用：显示实心圆
-//         "urgent": "󰀦"      // 有紧急通知
-      }
-   },
 
    "niri/window": {
      "format": " {app_id}",
@@ -113,9 +101,8 @@
    },
 
    "tray": {
-//      "icon-size": 21,
-      "spacing": 10,  // 托盘内的图标距离
-      "show-passive-items": true
+//      "icon-size": 15,
+      "spacing": 0 
    }
    
 }

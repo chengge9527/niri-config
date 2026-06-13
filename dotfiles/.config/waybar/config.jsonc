@@ -4,7 +4,7 @@
    "name": "bar-niri",
    "layer": "top",
    "mode": "dock",
-   "height": 38,
+   "height": 32,
    "margin": 0,
    "spacing": 1,
    "include": [

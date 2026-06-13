@@ -1,4 +1,5 @@
 include "binds.kdl"
+include "window-rules.kdl"
 
 // This config is in the KDL format: https://kdl.dev
 // "/-" comments out the following node.
@@ -89,7 +90,7 @@ output "HDMI-A-1" {
 // https://yalter.github.io/niri/Configuration:-Layout
 layout {
     // Set gaps around windows in logical pixels.
-    gaps 8
+    gaps 12
 
     // When to center a column when changing focus, options are:
     // - "never", default behavior, focusing an off-screen column will keep at the left
@@ -233,10 +234,10 @@ layout {
     // Top and bottom struts will simply add outer gaps in addition to the area occupied by
     // layer-shell panels and regular gaps.
     struts {
-        // left 64
-        // right 64
-        // top 64
-        // bottom 64
+       //  left 64
+       //  right 64
+       //  top 64
+       //  bottom 64
     }
 }
 
@@ -288,56 +289,3 @@ animations {
     slowdown 0.5
 }
 
-// Window rules let you adjust behavior for individual windows.
-// Find more information on the wiki:
-// https://yalter.github.io/niri/Configuration:-Window-Rules
-
-// Work around WezTerm's initial configure bug
-// by setting an empty default-column-width.
-window-rule {
-    geometry-corner-radius 12
-    clip-to-geometry true
-    opacity 1.0
-    draw-border-with-background false
-}
-window-rule {
-    // This regular expression is intentionally made as specific as possible,
-    // since this is the default config, and we want no false positives.
-    // You can get away with just app-id="wezterm" if you want.
-    match app-id=r#"^org\.wezfurlong\.wezterm$"#
-    default-column-width {}
-}
-
-// Open the Firefox picture-in-picture player as floating by default.
-window-rule {
-    // This app-id regular expression will work for both:
-    // - host Firefox (app-id is "firefox")
-    // - Flatpak Firefox (app-id is "org.mozilla.firefox")
-    match app-id=r#"firefox$"# title="^Picture-in-Picture$"
-    match app-id="waypaper"
-    match app-id="org.gnome.Nautilus"
-    match app-id="org.pulseaudio.pavucontrol"
-    match app-id="org.fcitx.fcitx5-config-qt"
-    match app-id="Waydroid"
-    match app-id="waydroid.com.huanmeng.zhanjian2"
-    open-floating true
-}
-
-// Example: block out two password managers from screen capture.
-// (This example rule is commented out with a "/-" in front.)
-/-window-rule {
-    match app-id=r#"^org\.keepassxc\.KeePassXC$"#
-    match app-id=r#"^org\.gnome\.World\.Secrets$"#
-
-    block-out-from "screen-capture"
-
-    // Use this instead if you want them visible on third-party screenshot tools.
-    // block-out-from "screencast"
-}
-
-// Example: enable rounded corners for all windows.
-// (This example rule is commented out with a "/-" in front.)
-/-window-rule {
-    geometry-corner-radius 12
-    clip-to-geometry true
-}
