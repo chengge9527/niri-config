@@ -7,29 +7,15 @@
    },
 
    "niri/workspaces": {
-    // 隐藏没有窗口且未激活的空白工作区，让 Dock 栏更紧凑
       "all-outputs": false,
-      "current-only": false,
-    
-    // 点击工作区按钮时的行为
-      "on-click": "activate",
-    
-    // 显示格式：这里使用图标模式
       "format": "{icon}",
-    
-    // 自定义工作区的状态图标（使用的是 Nerd Font 图标）
       "format-icons": {
-        // 默认状态（未聚焦、无窗口）
-        "default": "", 
-        // 当前正在使用（聚焦）的工作区
-        "active": "",
-        // 有窗口在后台运行，但当前未聚焦的工作区
-        "unfocused": "",
-        // 有紧急通知（比如有聊天消息）的工作区
-        "urgent": "󰀦"
+         "empty": "",      // 没有任何窗口的空工作区：显示空心圆
+         "default": "",    // 有窗口但未聚焦（这就是你想要的后台状态）：显示带点的圆
+         "active": ""      // 当前正在使用：显示实心圆
+//         "urgent": "󰀦"      // 有紧急通知
       }
    },
-
 
    "niri/window": {
      "format": " {app_id}",
@@ -38,7 +24,7 @@
 
    "clock": {
        "tooltip-format": "<tt><small>{calendar}</small></tt>",
-       "format": "{:%m-%d%H:%M}",
+       "format": "{:%m-%d %H:%M}",
        "calendar": {
            "mode": "year",
            "weeks-pos": "right",
@@ -56,15 +42,9 @@
    "network": {
      "interface": "eno1",
      "interval": 2,
-     "family": "ipv4_6",
-     "format": " {bandwidthDownBytes}  {bandwidthUpBytes}",
-     "format-wifi": "  {signalStrength}%  {bandwidthDownBytes}  {bandwidthUpBytes}",
-     "format-ethernet": " {bandwidthDownBytes:>}  {bandwidthUpBytes:>}",
+     "format": " {bandwidthDownBytes:>}  {bandwidthUpBytes:>}",
      "format-disconnected": "󰌙 ",
-     "tooltip-format": "  {ifname} via {gwaddri}",
-     "tooltip-format-wifi": "   {essid} ({signalStrength}%)",
-     "tooltip-format-ethernet": "{ipaddr}",
-     "tooltip-format-disconnected": "Disconnected",
+     "tooltip": false,
      "max-length": 30
    },
 
@@ -101,8 +81,8 @@
    },
 
    "tray": {
-//      "icon-size": 15,
-      "spacing": 0 
+      "spacing": 10  // 托盘内的图标距离
+//      "show-passive-items": true
    }
    
 }

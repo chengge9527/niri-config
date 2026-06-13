@@ -3,17 +3,19 @@
 */
 
 *{
-   font-size: 16px;
    font-family: Liberation Mono;
    font-weight: 600;
-   padding: 0px 5px 0px 5px;
+}
+
+#custom-launcher {
+   margin-left: 20px;
 }
 
 /* 清除默认的全局背景和边框 */
 window#waybar {
     background-color: transparent;
     border: none;
-    color: #8AE7FF;
+    color: #89b4fa;
 }
 
 /* 定位到主容器（或者直接作用于 window#waybar.main-window，取决于版本）
@@ -21,21 +23,22 @@ window#waybar {
    或者直接给 waybar 内部的容器加背景 */
 
 window#waybar > box {
-    background-color: rgba(30, 30, 46, 0.9); /* 带有透明度的暗色背景 */
+    background-color: rgba(30, 30, 46, 0.7); /* 带有透明度的暗色背景 */
     border: 1px solid rgba(255, 255, 255, 0.1); /* 淡淡 border 增加精致感 */
     border-radius: 16px; /* 圆角，Dock 栏的核心要素 */
     
     /* 悬浮的核心：外边距 */
     /* 语法：margin: 上 右 下 左; */
     /* 下面设置：距离屏幕顶部 0，左右各留 200px 变短，距离屏幕底部 10px 实现悬浮 */
-    margin: 3px 30px 3px 30px; 
+    margin: 6px 12px 0px 12px; 
     
     /* 内边距，让里面的图标离 Dock 边缘有一定呼吸感  
-    padding: 1px 1px; 
+    padding: 4px 12px; 
+    */ 
+   
+    /* 可选：加点阴影让悬浮感更强  
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.3);
     */
-
-    /* 可选：加点阴影让悬浮感更强 */
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
 }
 
 /* 如果你想让左中右三块模组独立成一个个小胶囊（类似无缝 Dock），可以这样： */
@@ -48,43 +51,43 @@ window#waybar > box {
 }
 */
 
-/* 针对整个工作区胶囊内部的微调 */
+/* 整个工作区容器 */
 #workspaces {
-   padding: 3px 8px 0px 8px;
+    background-color: transparent;
+    margin: 0 4px;
 }
 
-/* 针对里面每一个单独的工作区按钮（数字 1, 2, 3） */
+/* 1. 默认状态（后台有窗口运行） */
 #workspaces button {
-    font-size: 11px;          /* 调小字体，默认通常是 13px-16px */
-    font-weight: bold;        /* 加粗让小数字更清晰 */
-    padding: 0px 6px;         /* 缩小按钮左右的间距，防止拉得太长 */
-    min-width: 16px;          /* 限制最小宽度，防止变成椭圆 */
-    min-height: 16px;
-    color: #6c7086;           /* 未激活工作区的颜色（低调的灰色） */
-    box-shadow: none;         /* 清除 GTK 默认按钮阴影 */
-    text-shadow: none;
-    border-radius: 50px;      /* 让单个按钮变成正圆（如果加背景的话） */
+    color: #a6adc8;            /* 浅灰色，因为有窗口，所以亮度稍微高一点 */
+    padding: 0;            
+    min-width: 24px;   
+    min-height: 24px;  
+    border-radius: 50%;        
+    transition: all 0.2s ease; 
+    box-shadow: inherit;
+    text-shadow: inherit;
+    border: none;
+    background: transparent;
+    margin: 0 2px;
 }
 
-/* 鼠标悬停在数字上时 */
+/* 2. 【新增】没有任何窗口的空工作区 */
+#workspaces button.empty {
+    color: rgba(255, 255, 255, 0.3); /* 没窗口时，颜色暗下来，降低存在感 */
+}
+
+/* 3. 鼠标悬停时 */
 #workspaces button:hover {
-    color: #cdd6f4;
-    background: rgba(255, 255, 255, 0.1);
+    color: #cdd6f4;            
 }
 
-/* 当前正在使用（聚焦）的工作区 */
-#workspaces button.focused,
+/* 4. 当前正在使用（激活）的工作区 */
 #workspaces button.active {
-    color: #89b4fa;           /* 激活时的亮蓝色 */
-    font-size: 12px;          /* 可以稍微比普通状态大一点点，突出当前工作区 */
+    color: #89b4fa;            /* 亮蓝色 */
 }
 
-/* 有窗口打开、但未聚焦的工作区（根据 Waybar 版本可能支持） */
-#workspaces button.urgent {
-    color: #f38ba8;           /* 警告红 */
-}
-
-/* ------不晓得有撒子用------
+/*
 #scratchpad {
    background: #7AA2F7;
    color: #1A1B26;
@@ -94,19 +97,18 @@ window#waybar > box {
 }
 */
 
-/* ------暂时不用------
-#clock,
 #network,
 #cpu,
 #memory,
 #pulseaudio,
-#inhibitor,
-#tray {
-   border-radius: 4px;
-   margin: 2px;
-   padding: 0px 4px;
+#inhibitor {
+   padding: 0px 5px 0px 5px;
 }
-*/
+
+#clock {
+   font-size: 16px;
+   padding: 3px 0px 0px 0px;
+}
 
 #inhibitor {
    color: #E0E0E0;
@@ -114,6 +116,11 @@ window#waybar > box {
 
 #inhibitor.activated{
    color: #FF8900;
+}
+
+#tray {
+   margin-left: 5px;
+   margin-right: 20px;
 }
 
 /* 专属日历提示框的圆角与高级感配色 */
