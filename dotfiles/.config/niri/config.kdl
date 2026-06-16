@@ -79,7 +79,7 @@ input {
 // https://yalter.github.io/niri/Configuration:-Outputs
 // Remember to uncomment the node by removing "/-"!
 output "HDMI-A-1" {
-	mode "1920x1080@60"
+	mode "1920x1080@60.000"
 	scale 1
 	position x=0 y=0
 	focus-at-startup
@@ -250,7 +250,7 @@ layout {
 spawn-at-startup "/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1"
 spawn-at-startup "waybar"
 spawn-at-startup "awww-daemon"
-spawn-at-startup "waypaper" "--random"
+// pawn-at-startup "waypaper" "--random"
 spawn-at-startup "mako"
 spawn-at-startup "fcitx5"
 spawn-at-startup "~/.config/niri/scripts/swayidle.sh"

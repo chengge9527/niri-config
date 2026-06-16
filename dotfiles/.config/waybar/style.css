@@ -23,14 +23,14 @@ window#waybar {
    或者直接给 waybar 内部的容器加背景 */
 
 window#waybar > box {
-    background-color: rgba(30, 30, 46, 0.7); /* 带有透明度的暗色背景 */
+    background-color: rgba(30, 30, 46, 0.8); /* 带有透明度的暗色背景 */
     border: 1px solid rgba(255, 255, 255, 0.1); /* 淡淡 border 增加精致感 */
     border-radius: 16px; /* 圆角，Dock 栏的核心要素 */
     
     /* 悬浮的核心：外边距 */
     /* 语法：margin: 上 右 下 左; */
     /* 下面设置：距离屏幕顶部 0，左右各留 200px 变短，距离屏幕底部 10px 实现悬浮 */
-    margin: 6px 12px 0px 12px; 
+    margin: 6px 10px 0px 10px; 
     
     /* 内边距，让里面的图标离 Dock 边缘有一定呼吸感  
     padding: 4px 12px; 
@@ -125,7 +125,7 @@ window#waybar > box {
 
 /* 专属日历提示框的圆角与高级感配色 */
 tooltip {
-   background: rgba(0, 0, 0, 1);
+   background: rgba(0, 0, 0, 0.8);
    border-radius: 8px;
    padding: 10px;
 }

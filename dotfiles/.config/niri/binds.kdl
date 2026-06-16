@@ -19,7 +19,7 @@ binds {
     Mod+W hotkey-overlay-title="chrome" { spawn "google-chrome-stable"; }
     Mod+F1 hotkey-overlay-title="开关输入法" { spawn-sh "pkill fcitx5 || fcitx5"; }
     Mod+F2 hotkey-overlay-title="开关waybar" { spawn-sh "pkill waybar || waybar"; }
-    Mod+F5 hotkey-overlay-title="切换壁纸" {spawn-sh "awww img $(find ~/Pictures/Wallpapers -type f | shuf -n 1) --transition-type any --transition-duration 2.0 --transition-step 90"; } 
+    Mod+F5 hotkey-overlay-title="切换壁纸" {spawn "~/.config/niri/scripts/change_wallpaper.sh"; } 
     Mod+F12 hotkey-overlay-title="关闭waydroid" { spawn-sh "waydroid session stop"; }
     Mod+Alt+M hotkey-overlay-title="休眠" { spawn "~/.config/niri/scripts/suspend.sh"; }
     Mod+Alt+L hotkey-overlay-title="锁定屏幕" { spawn "swaylock"; }
