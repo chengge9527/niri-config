@@ -9,6 +9,7 @@ syntax on
 
 " 开启自动缩进，新的一行会自动与上一行对齐
 set autoindent
+
 " 在输入搜索词时，实时高亮显示匹配项（增量搜索）
 set incsearch
 
@@ -26,3 +27,11 @@ set clipboard=unnamedplus
 
 " 接管鼠标事件
 set mouse=a
+
+" 总是显示状态栏
+set laststatus=2
+
+"===[ 光标形状 ]==="
+let &t_SI = "\<Esc>[6 q"
+let &t_SR = "\<Esc>[4 q"
+let &t_EI = "\<Esc>[2 q"
