@@ -5,9 +5,9 @@ SELECTION=$(echo -e "取消\n确认" | fuzzel --dmenu --prompt="确定要退出n
 
 case "$SELECTION" in
     "确认")
-        waydroid session stop
-		sleep 1
-        niri msg action quit --skip-confirmation
+	waydroid session stop
+	sleep 1
+	niri msg action quit --skip-confirmation
         ;;
     *)
         # 选择了取消或者直接按了 Esc，不执行任何操作优雅退出
