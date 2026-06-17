@@ -33,4 +33,6 @@ ps -eo pid,ppid,stat,cmd | awk '$3 ~ /^Z/ {print}'
 nmcli device disconnect eno1  
 nmcli device connect eno1 
 
-127.0.1.1        archlinux.localdomain   archlinux  
+echo "127.0.1.1        archlinux.localdomain   archlinux" >> /etc/hosts
+
+ALL:sudo pacman -S vulkan-radeon pipewire-pulse pavucontrol swayidle awww swaylock-effects libnotify mako polkit-gnome xwayland-satellite ttf-dejavu ttf-jetbrains-mono-nerd noto-fonts-cjk noto-fonts-emoji fcitx5-im fcitx5-chinese-addons fcitx5-mozc waybar  
