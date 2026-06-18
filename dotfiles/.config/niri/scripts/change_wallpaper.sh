@@ -31,7 +31,7 @@ echo "$NEXT" > "$CACHE"
 
 # 调用 awww 切换
 awww img "$NEXT" \
-    --transition-type any \
+    --transition-type grow \
     --transition-duration 2.5 \
-    --transition-step 90
+   # --transition-step 90
 

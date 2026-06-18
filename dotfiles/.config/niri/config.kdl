@@ -254,6 +254,8 @@ spawn-at-startup "awww-daemon"
 spawn-at-startup "mako"
 spawn-at-startup "fcitx5"
 spawn-at-startup "~/.config/niri/scripts/swayidle.sh"
+// spawn-at-startup "swayidle" "-w" "timeout" "1800" "~/.config/niri/scripts/change_wallpaper.sh"
+// spawn-at-startup "~/.config/niri/scripts/auto_change_wallpaper.sh"
 
 // To run a shell command (with variables, pipes, etc.), use spawn-sh-at-startup:
 // spawn-sh-at-startup "qs -c ~/source/qs/MyAwesomeShell"
