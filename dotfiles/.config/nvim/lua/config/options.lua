@@ -1,6 +1,3 @@
---local opt = vim.opt
-
-
 -- 基础设置
 vim.o.number = true            -- 显示行号
 vim.o.relativenumber = true    -- 相对行号
@@ -26,15 +23,4 @@ vim.o.clipboard = "unnamedplus" -- 使用系统剪贴板
 
 -- 编码
 vim.o.encoding = "utf-8"
-vim.o.fileencoding = "utf-8"
-
--- 键位映射
-local map = vim.keymap.set
-map("n", "<Space>", "<Nop>", { silent = true })
-vim.g.mapleader = " "          -- 设置空格为 leader
-
--- 快捷键示例
-map("n", "<leader>w", ":w<CR>", { desc = "保存文件" })
-map("n", "<leader>q", ":q<CR>", { desc = "退出" })
-map("n", "<leader>h", ":nohlsearch<CR>", { desc = "取消搜索高亮" })
-
+--vim.o.fileencoding = "utf-8"

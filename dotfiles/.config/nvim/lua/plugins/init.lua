@@ -14,26 +14,48 @@ return {
   -- =================================================================
   -- 2. 状态栏 (Statusline)
   -- =================================================================
+  -- {
+  --   "nvim-lualine/lualine.nvim",
+  --   dependencies = { "nvim-tree/nvim-web-devicons" },
+  --   config = function()
+  --     require("lualine").setup()
+  --   end,
+  -- },
+
   {
     "nvim-lualine/lualine.nvim",
     dependencies = { "nvim-tree/nvim-web-devicons" },
     config = function()
-      require("lualine").setup()
+      require("lualine").setup({
+        sections = {
+          lualine_c = {
+            {
+              "filename",
+              -- 关键参数设置：
+              -- 0: 只显示文件名 (默认)
+              -- 1: 显示相对路径 (例如: src/components/main.lua)
+              -- 2: 显示绝对路径 (例如: /home/monkey/.config/nvim/init.lua)
+              -- 3: 显示绝对路径，但如果是在家目录下，会自适应缩写为 ~ (例如: ~/.config/nvim/init.lua)
+              path = 3, 
+            },
+          },
+        },
+      })
     end,
   },
 
   -- =================================================================
   -- 3. 文件树 (File Explorer)
   -- =================================================================
-  {
-    "nvim-tree/nvim-tree.lua",
-    dependencies = { "nvim-tree/nvim-web-devicons" },
-    config = function()
-      require("nvim-tree").setup()
-      -- 快捷键：空格 + e 打开/关闭文件树
-      vim.keymap.set("n", "<leader>e", ":NvimTreeToggle<CR>", { silent = true })
-    end,
-  },
+  -- {
+  --   "nvim-tree/nvim-tree.lua",
+  --   dependencies = { "nvim-tree/nvim-web-devicons" },
+  --   config = function()
+  --     require("nvim-tree").setup()
+  --     -- 快捷键：空格 + e 打开/关闭文件树
+  --     vim.keymap.set("n", "<leader>e", ":NvimTreeToggle<CR>", { silent = true })
+  --   end,
+  -- },
 
   -- =================================================================
   -- 4. 模糊搜索 (Fuzzy Finder)
@@ -54,26 +76,39 @@ return {
   -- =================================================================
   -- 5. 语法高亮 (Treesitter)
   -- =================================================================
+  -- {
+  --   "nvim-treesitter/nvim-treesitter",
+  --   build = ":TSUpdate",
+  --   config = function()
+  --     -- 最新版推荐直接安全调用
+  --     local status_ok, ts_configs = pcall(require, "nvim-treesitter.configs")
+  --     if status_ok then
+  --       ts_configs.setup({
+  --         ensure_installed = { "lua", "vim", "vimdoc", "query", "markdown", "javascript", "python" },
+  --         highlight = { enable = true },
+  --         indent = { enable = true },
+  --       })
+  --     else
+  --       -- 针对绝对纯净最新版的 fallback 方案
+  --       require("nvim-treesitter").setup({
+  --         ensure_installed = { "lua", "vim", "vimdoc", "query", "markdown", "javascript", "python" },
+  --         highlight = { enable = true },
+  --         indent = { enable = true },
+  --       })
+  --     end
+  --   end,
+  -- },
+
   {
     "nvim-treesitter/nvim-treesitter",
     build = ":TSUpdate",
     config = function()
-      -- 最新版推荐直接安全调用
-      local status_ok, ts_configs = pcall(require, "nvim-treesitter.configs")
-      if status_ok then
-        ts_configs.setup({
-          ensure_installed = { "lua", "vim", "vimdoc", "query", "markdown", "javascript", "python" },
-          highlight = { enable = true },
-          indent = { enable = true },
-        })
-      else
-        -- 针对绝对纯净最新版的 fallback 方案
-        require("nvim-treesitter").setup({
-          ensure_installed = { "lua", "vim", "vimdoc", "query", "markdown", "javascript", "python" },
-          highlight = { enable = true },
-          indent = { enable = true },
-        })
-      end
+      -- 极其纯粹的初始化，完全不依赖任何可能被废弃的子模块路径
+      require("nvim-treesitter").setup({
+        ensure_installed = { "lua", "vim", "vimdoc", "query", "markdown", "javascript", "python" },
+        highlight = { enable = true },
+        indent = { enable = true },
+      })
     end,
   },
 
