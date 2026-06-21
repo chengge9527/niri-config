@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # 使用 fuzzel 渲染选项
-SELECTION=$(echo -e "取消\n确认" | fuzzel --dmenu --prompt="确定要挂起计算机吗？" --lines 2 --width 25)
+SELECTION=$(echo -e "取消\n确认" | fuzzel --dmenu --prompt="确认挂起计算机吗？" --lines 2 --width 25)
 
 case "$SELECTION" in
     "确认")

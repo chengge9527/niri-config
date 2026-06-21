@@ -15,6 +15,8 @@ kitty intel-ucode vulkan-radeon firefox waypaper pipewire-pulse pavucontrol sway
 fcitx5-im  fcitx5-chinese-addons  
 字体  
 ttf-dejavu ttf-jetbrains-mono-nerd noto-fonts-cjk noto-fonts-emoji (noto-fonts adobe-source-han-sans-otc-fonts)  
+    -- aur：ttf-harmonyos-sans  
+    --      ttf-roboto-mono-nerd
 截图软件  
 grim swappy slurp  
 
