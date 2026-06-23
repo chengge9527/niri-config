@@ -1,6 +1,6 @@
 # nifi-config
 
-![项目架构图](dotfiles/Pictures/Screenshots/Screenshot_2026-06-23_22-36-07.png)
+![项目架构图](dotfiles/Pictures/Screenshots/Screenshot_2026-06-11_21-30-53.png)
 
 
 中科大源：  
@@ -16,7 +16,12 @@ fcitx5-im  fcitx5-chinese-addons
 字体  
 ttf-dejavu ttf-jetbrains-mono-nerd noto-fonts-cjk noto-fonts-emoji (noto-fonts adobe-source-han-sans-otc-fonts)  
     -- aur：ttf-harmonyos-sans  
-    --      ttf-roboto-mono-nerd
+    --      ttf-roboto-mono-nerd,ttf-maplemononormal-nf-cn,ttf-maplemono-nf
+    -- 韩文字体： adobe-source-han-sans-kr-fonts  
+
+ttf-hack-nerd adobe-source-han-sans-jp-fonts 
+
+
 截图软件  
 grim swappy slurp  
 
@@ -37,7 +42,7 @@ nmcli device connect eno1
 
 echo "127.0.1.1        archlinux.localdomain   archlinux" >> /etc/hosts
 
-ALL:sudo pacman -S vulkan-radeon pipewire-pulse pavucontrol swayidle awww swaylock-effects libnotify mako polkit-gnome xwayland-satellite ttf-dejavu ttf-jetbrains-mono-nerd noto-fonts-cjk noto-fonts-emoji fcitx5-im fcitx5-chinese-addons fcitx5-mozc waybar  
+ALL:sudo pacman -S vulkan-radeon pipewire-pulse pavucontrol swayidle awww swaylock-effects libnotify mako polkit-gnome xwayland-satellite ttf-dejavu noto-fonts-emoji fcitx5-im fcitx5-chinese-addons fcitx5-mozc waybar  
 
 查看有哪些shell  
     cat /etc/shells  

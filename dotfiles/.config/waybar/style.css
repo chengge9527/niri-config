@@ -1,75 +1,56 @@
-/* 
-   Importing colors from theme directory
-*/
+@import "color.css";
 
 *{
-   font-family: Liberation Mono;
-   font-weight: 600;
+    font-family:    JetBrainsMono NF;
+    font-size: 16px; 
+    font-weight: 800;
 }
 
-#custom-launcher {
-   margin-left: 20px;
-}
-
-/* 清除默认的全局背景和边框 */
 window#waybar {
-    background-color: transparent;
+    background-color: transparent; 
     border: none;
-    color: #89b4fa;
 }
-
-/* 定位到主容器（或者直接作用于 window#waybar.main-window，取决于版本）
-   通常包裹一层 .modules-left, .modules-center, .modules-right 
-   或者直接给 waybar 内部的容器加背景 */
 
 window#waybar > box {
-    background-color: rgba(30, 30, 46, 0.8); /* 带有透明度的暗色背景 */
-    border: 1px solid rgba(255, 255, 255, 0.1); /* 淡淡 border 增加精致感 */
-    border-radius: 16px; /* 圆角，Dock 栏的核心要素 */
-    
-    /* 悬浮的核心：外边距 */
-    /* 语法：margin: 上 右 下 左; */
-    /* 下面设置：距离屏幕顶部 0，左右各留 200px 变短，距离屏幕底部 10px 实现悬浮 */
-    margin: 6px 10px 0px 10px; 
-    
-    /* 内边距，让里面的图标离 Dock 边缘有一定呼吸感  
-    padding: 4px 12px; 
-    */ 
-   
-    /* 可选：加点阴影让悬浮感更强  
-    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.3);
-    */
+    /* background-color: rgba(30, 30, 46, 0.85); */
+    /* border: 1px solid rgba(255, 255, 255, 0.1); */
+    /* --外层大圆角-- */
+    border-radius: 20px;
+    /* --简化写法：上下 0，左右 20-- */
+    margin: 6px 10px 0px 10px;
+    /* --内边距-- */
+    padding: 0px; 
+    /* --文字颜色-- */
+    color: #C0A878; 
 }
 
-/* 如果你想让左中右三块模组独立成一个个小胶囊（类似无缝 Dock），可以这样： */
-/*
-.modules-left, .modules-center, .modules-right {
-    background: rgba(255,255,255,0.1);
-    border-radius: 12px;
-    padding: 0 8px;
-    margin: 2px;
+/* 3. 模块组：负责内部模块的背景和内层圆角 */
+.modules-left,.modules-center,.modules-right {
+    background: rgba(30, 30, 46, 0.5);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 16px; /* 内层小圆角，与外层形成对比 */
+    padding: 0px 20px;          /*内边距            */
+    /* margin: 2px;          模块间微小间距 */
 }
-*/
 
 /* 整个工作区容器 */
 #workspaces {
     background-color: transparent;
-    margin: 0 4px;
+    margin: 0px 6px;
 }
 
 /* 1. 默认状态（后台有窗口运行） */
 #workspaces button {
     color: #a6adc8;            /* 浅灰色，因为有窗口，所以亮度稍微高一点 */
     padding: 0;            
-    min-width: 24px;   
-    min-height: 24px;  
-    border-radius: 50%;        
-    transition: all 0.2s ease; 
-    box-shadow: inherit;
-    text-shadow: inherit;
+    min-width: 26px;   
+    min-height: 26px;  
+    transition: color 0.2s ease;
+    box-shadow: none;
+    text-shadow: none;
     border: none;
     background: transparent;
-    margin: 0 2px;
+    /* margin: 0 4px;  */
 }
 
 /* 2. 【新增】没有任何窗口的空工作区 */
@@ -84,46 +65,45 @@ window#waybar > box {
 
 /* 4. 当前正在使用（激活）的工作区 */
 #workspaces button.active {
-    color: #89b4fa;            /* 亮蓝色 */
+    color: #24a0ed;
 }
 
-/*
-#scratchpad {
-   background: #7AA2F7;
-   color: #1A1B26;
-   margin: 0px 0px 2px 0px;
-   padding: 0px 8px;
-   border-radius: 0px;
+/* ------启动模块------ */
+#custom-launcher {
+    color: #89b4fa;
 }
-*/
 
 #network,
 #cpu,
 #memory,
 #pulseaudio,
-#inhibitor {
-   padding: 0px 5px 0px 5px;
+#tray {
+    margin-right: 15px;
 }
 
 #clock {
-   font-size: 16px;
-   padding: 3px 0px 0px 0px;
+    color: #70B898;
+}
+
+#network {
+    color: #E8B8C8;
+}
+
+#cpu,
+#memory,
+#pulseaudio,
+#tray {
+    /* color: #C0A878; */
 }
 
 #inhibitor {
-   color: #E0E0E0;
+    color: #E0E0E0;
 }
 
 #inhibitor.activated{
-   color: #FF8900;
+    color: #FF8900;
 }
 
-#tray {
-   margin-left: 5px;
-   margin-right: 20px;
-}
-
-/* 专属日历提示框的圆角与高级感配色 */
 tooltip {
    background: rgba(0, 0, 0, 0.8);
    border-radius: 8px;

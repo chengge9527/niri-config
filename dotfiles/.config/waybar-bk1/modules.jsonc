@@ -81,7 +81,7 @@
    },
 
    "tray": {
-      "spacing": 13  // 托盘内的图标距离
+      "spacing": 10  // 托盘内的图标距离
 //      "show-passive-items": true
    }
    
