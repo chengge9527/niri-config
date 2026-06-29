@@ -1,0 +1,37 @@
+[
+{
+    "id": "bar-0",
+    "name": "bar-niri",
+    "layer": "top",
+    "mode": "dock",
+    "height": 33,
+    "margin": 0,
+    // "spacing": 1,
+    // "layer": "top",
+    // "position": "top",
+    // "height": 36, // 稍微加高一点，给内层容器留出空间
+    // "margin-top": 8,    // 顶部留白
+    // "margin-left": 16,  // 左侧留白
+    // "margin-right": 16, // 右侧留白
+    // "spacing": 0, // 把这里的间距设为0，间距交由 CSS 的 margin 控制
+    "include": [
+        "$HOME/.config/waybar/modules.jsonc"
+    ],
+    "modules-left": [
+        "custom/launcher",
+        "niri/workspaces",
+        "niri/window"
+    ],
+    "modules-center": [
+        "clock"
+    ],
+    "modules-right": [
+        "network",
+        "cpu",
+        "memory",
+        "pulseaudio",
+        "tray",
+        "inhibitor"
+    ]
+}
+]

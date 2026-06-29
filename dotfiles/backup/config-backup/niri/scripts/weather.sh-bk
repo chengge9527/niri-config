@@ -1,0 +1,55 @@
+#!/usr/bin/env bash
+
+# 你可以改成自己的城市，比如 "Charlotte" / "Beijing"或者经纬度
+LOCATION="29.5069,106.4896"
+
+# 天气数据缓存在本地,每600秒更新数据
+CACHE_DIR="${HOME}/.cache/waybar-weather"
+CACHE_FILE="${CACHE_DIR}/${LOCATION}.cache"
+CACHE_TTL=600  # 10分钟
+
+# 确保缓存目录存在
+mkdir -p "$CACHE_DIR"
+
+# 判断是否使用缓存
+use_cache=0
+
+if [[ -f "$CACHE_FILE" ]]; then
+  now=$(date +%s)
+  mtime=$(stat -c %Y "$CACHE_FILE")
+  if (( now - mtime < CACHE_TTL )); then
+    use_cache=1
+  fi
+fi
+
+# 获取数据
+if [[ $use_cache -eq 1 ]]; then
+  data=$(cat "$CACHE_FILE")
+else
+  # data=$(curl -s "wttr.in/${LOCATION}?format=%c+%t+%w&lang=zh")
+   data=$(curl -s "wttr.in/${LOCATION}?format=%c+%t+%h+%P+%u+%w+%C+%p&lang=zh-cn")
+
+
+  # 写入缓存（只在成功时写）
+  if [[ -n "$data" ]]; then
+    echo "$data" > "$CACHE_FILE"
+  fi
+fi
+
+# 防止请求失败
+if [[ -z "$data" ]]; then
+  echo '{"text":" N/A","tooltip":"Weather fetch failed"}'
+  exit 0
+fi
+
+icon=$(echo "$data" | awk '{print $1}')
+temp=$(echo "$data" | awk '{print $2}')
+humidity=$(echo "$data" | awk '{print $3}')
+pressure=$(echo "$data" | awk '{print $4}')
+uv=$(echo "$data" | awk '{print $5}')
+wind=$(echo "$data" | awk '{print $6}')
+condition=$(echo "$data" | awk '{print $7}')
+precipitation=$(echo "$data" | awk '{print $8}')
+
+
+echo "{\"text\":\"$icon $condition($temp)\",\"tooltip\":\"湿度: $humidity\n气压: $pressure\n风速: $wind\n紫外线: $uv/11\n降雨量: $precipitation\"}"

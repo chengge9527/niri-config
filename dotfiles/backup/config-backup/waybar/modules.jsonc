@@ -1,0 +1,96 @@
+{
+    "custom/launcher": {
+        "format": " ", 
+        "on-click": "fuzzel", 
+        "on-click-right": "pkill fuzzel", 
+        "tooltip": false 
+    },
+
+    "niri/workspaces": {
+        "all-outputs": false,
+        "format": "{icon}",
+        "format-icons": {
+            "empty": "",      // 没有任何窗口的空工作区：显示空心圆
+            "default": "",    // 有窗口但未聚焦（这就是你想要的后台状态）：显示带点的圆
+            "active": ""      // 当前正在使用：显示实心圆
+//          "urgent": "󰀦"      // 有紧急通知
+        }
+    },
+
+    "niri/window": {
+        "format": "  {app_id}",
+        "max-length": 60
+    },
+
+    "clock": {
+        "tooltip-format": "<tt><small>{calendar}</small></tt>",
+        "format": "{:%m-%d %H:%M}",
+        "calendar": {
+            "mode": "year",
+            "weeks-pos": "right",
+            "mode-mon-col": 3,
+            "format": {
+                "months":   "<span color='#acb0d0'><b>{}</b></span>",
+                "weeks":    "<span color='#7aa2f7'><b>W{}</b></span>",
+                "weekdays": "<span color='#e0af68'><b>{}</b></span>",
+                "days":     "<span color='#acb0d0'><b>{}</b></span>",
+                "today":    "<span color='#41a6b5'><b><u>{}</u></b></span>"
+            }
+        }
+    },
+
+    "network": {
+        "interval": 2,
+        "interface": "eno1",
+        "format": " {bandwidthDownBytes:>}  {bandwidthUpBytes:>}",
+        "format-disconnected": "󰌙 ",
+        "tooltip": false,
+        "max-length": 30
+    },
+
+    "custom/weather": {
+    "interval": 600,
+    "exec": "~/tq-dir/google-tq-openweathermap.org.sh",
+    "return-type": "json",
+    "tooltip": true,
+    "format": "{}"
+    },
+
+    "cpu": {
+        "interval": 2,
+        "format": " {usage:02}%",
+        "tooltip": true
+    },
+
+    "memory": {
+        "interval": 10,
+        "format": " {percentage:02}%",
+        "format-alt": " {used:0.1f}G/{total:0.1f}G",
+        "max-length": 20
+    },
+
+    "pulseaudio": {
+        "format": "{icon} {volume:02}",
+        "on-click": "pavucontrol",
+        "format-muted": "",
+        "format-icons": {
+            "default": ["","","",""]
+        },
+        "tooltip": true
+    },
+
+    "inhibitor": {
+        "what": "sleep", // 可选值：idle, sleep, shutdown, handle-lid-switch 等
+        "format": "{icon}",
+        "format-icons": {
+            "activated": "󰤄",
+            "deactivated": "󰤄"
+        }
+    },
+
+    "tray": {
+        "spacing": 13  // 托盘内的图标距离
+        // "show-passive-items": true
+    }
+   
+}

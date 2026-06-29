@@ -1,0 +1,96 @@
+@import "color.css";
+
+*{
+    font-family:    JetBrainsMono NF;
+    font-size: 16px; 
+    font-weight: 600;
+}
+
+window#waybar {
+    background-color: transparent; 
+    border: none;
+}
+
+window#waybar > box {
+    /* background-color: rgba(30, 30, 46, 0.85); */
+    /* border: 1px solid rgba(255, 255, 255, 0.1); */
+    /* --外层大圆角-- */
+    border-radius: 20px;
+    /* --简化写法：上下 0，左右 20-- */
+    margin: 6px 10px 0px 10px;
+    /* --内边距-- */
+    padding: 0px; 
+    /* --文字颜色-- */
+    color: #f9e2af; 
+}
+
+/* 3. 模块组：负责内部模块的背景和内层圆角 */
+.modules-left,.modules-center,.modules-right {
+    background: rgba(30, 30, 46, 0.5);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 16px; /* 内层小圆角，与外层形成对比 */
+    padding: 0px 20px;          /*内边距            */
+    /* margin: 2px;          模块间微小间距 */
+}
+
+/* 整个工作区容器 */
+#workspaces {
+    background-color: transparent;
+    margin: 0px 6px;
+}
+
+/* 1. 默认状态（后台有窗口运行） */
+#workspaces button {
+    color: #a6adc8;            /* 浅灰色，因为有窗口，所以亮度稍微高一点 */
+    padding: 0;            
+    min-width: 26px;   
+    min-height: 26px;  
+    transition: color 0.2s ease;
+    box-shadow: none;
+    text-shadow: none;
+    border: none;
+    background: transparent;
+    /* margin: 0 4px;  */
+}
+
+/* 2. 【新增】没有任何窗口的空工作区 */
+#workspaces button.empty {
+    color: rgba(255, 255, 255, 0.3); /* 没窗口时，颜色暗下来，降低存在感 */
+}
+
+/* 3. 鼠标悬停时 */
+#workspaces button:hover {
+    color: #cdd6f4;            
+}
+
+/* 4. 当前正在使用（激活）的工作区 */
+#workspaces button.active {
+    color: #24a0ed;
+}
+
+/* ------启动模块------ */
+#custom-launcher {
+    color: #89b4fa;
+}
+
+#network,
+#cpu,
+#memory,
+#pulseaudio,
+#tray {
+    margin-right: 15px;
+}
+
+#inhibitor {
+    color: #E0E0E0;
+}
+
+#inhibitor.activated{
+    color: #FF8900;
+}
+
+tooltip {
+   background: rgba(0, 0, 0, 0.8);
+   border-radius: 8px;
+   padding: 10px;
+}
