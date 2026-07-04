@@ -5,11 +5,12 @@ set -euo pipefail
 # 用户配置
 ########################
 
-API_KEY="key"
+# API_KEY="112310dffc8c406586becdfc554c9275"
+API_KEY="${HF_API_KEY:?ERROR: OWM_API_KEY is not set}"
 LOCATION="106.49,29.51"
 
-CACHE_DIR="${XDG_CACHE_HOME:-$HOME/.cache}/waybar"
-CACHE_FILE="$CACHE_DIR/qweather.json"
+CACHE_DIR="${XDG_CACHE_HOME:-$HOME/.cache}/waybar-weather"
+CACHE_FILE="$CACHE_DIR/weather.json"
 CURL_CONNECT_TIMEOUT=5                     # curl 连接超时 (秒)
 CURL_MAX_TIME=10                           # curl 最大执行时间 (秒)
 # 新增重试
@@ -44,7 +45,7 @@ if (( need_update )); then
         --retry "$CURL_RETRY" \
         --retry-delay "$CURL_RETRY_DELAY" \
         --retry-max-time "$CURL_RETRY_MAX_TIME" \
-        "https://my-id/v7/weather/now?location=${LOCATION}&key=${API_KEY}" \
+        "https://m53aarq76h.re.qweatherapi.com/v7/weather/now?location=${LOCATION}&key=${API_KEY}" \
         -o "${CACHE_FILE}.tmp"
     then
         mv "${CACHE_FILE}.tmp" "$CACHE_FILE"
@@ -76,25 +77,27 @@ fi
 
 read -r temp text humidity pressure windSpeed windDir precip feelsLike vis updateTime icon < <(
     jq -r '[
-    .now.temp,
-    .now.text,
-    .now.humidity,
-    .now.pressure,
-    .now.windSpeed,
-    .now.windDir,
-    .now.precip,
-    .now.feelsLike,
-    .now.vis,
-    .updateTime,
-    .now.icon
+        .now.temp,
+        .now.text,
+        .now.humidity,
+        .now.pressure,
+        .now.windSpeed,
+        .now.windDir,
+        .now.precip,
+        .now.feelsLike,
+        .now.vis,
+        .updateTime,
+        .now.icon
     ] | @tsv' "$CACHE_FILE" 2>/dev/null || echo ""
 )
 
 icon_code="$icon"
 
 case "$icon" in
-    100|105)                    icon=""; class="clear" ;;
-    10[1-4]|15[1-3])            icon="󰖐"; class="clouds" ;;
+    100)                        icon=""; class="clear" ;;          # day
+    150)                        icon=""; class="clear" ;;          # night
+    10[1-4])                    icon=""; class="clouds" ;;         # day
+    15[1-3])                    icon=""; class="clouds" ;;         # night
     30[0-4])                    icon=""; class="thunderstorm" ;;
     30[5-9]|31[0-8]|399)        icon=""; class="rain" ;;
     40[0-9]|410|456|457|499)    icon=""; class="snow" ;;
