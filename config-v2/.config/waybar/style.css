@@ -1,0 +1,149 @@
+@import "color.css";
+
+* {
+    font-family: "JetBrainsMono NF";
+    font-size: 16px;
+    font-weight: 600;
+}
+
+window#waybar {
+    background-color: transparent;
+    border: none;
+}
+
+window#waybar > box {
+    margin: 0 10px;
+    padding: 0;
+    color: #fdbb65;
+}
+
+/* Three independent pills */
+.modules-left,
+.modules-center,
+.modules-right {
+    background: rgba(30, 30, 46, 0.7);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 16px;
+    padding: 0 14px;
+    margin: 0 3px;
+}
+
+/* Workspaces */
+#workspaces {
+    background: transparent;
+}
+
+#workspaces button {
+    color: #a6adc8;
+    padding: 0;
+    min-width: 26px;
+    min-height: 26px;
+    transition: color 0.2s ease;
+    box-shadow: none;
+    text-shadow: none;
+    border: none;
+    background: transparent;
+}
+
+#workspaces button.empty {
+    color: rgba(255, 255, 255, 0.3);
+}
+
+#workspaces button:hover {
+    color: #cdd6f4;
+}
+
+#workspaces button.active {
+    color: #24a0ed;
+}
+
+/* Launcher */
+#custom-launcher {
+    color: #24a0ed;
+}
+
+/* Modules */
+#network,
+#custom-weather,
+#cpu,
+#memory,
+#pulseaudio {
+    margin-right: 15px;
+}
+
+#tray {
+    margin-right: 12px;
+}
+
+#clock {
+    color: #A6E3A1;
+}
+
+#network {
+    color: #fffd6d;
+}
+
+#cpu,
+#memory,
+#pulseaudio {
+    color: #fdbb65;
+}
+
+#tray,
+#inhibitor {
+    color: #E0E0E0;
+}
+
+#inhibitor.activated {
+    color: #FF8900;
+}
+
+/* Weather */
+#custom-weather.clear {
+    color: @weather-clear;
+}
+
+#custom-weather.clouds {
+    color: @weather-clouds;
+}
+
+#custom-weather.thunderstorm {
+    color: @weather-thunderstorm;
+    text-shadow: 0 0 8px rgba(142, 68, 173, 0.6);
+}
+
+#custom-weather.rain {
+    color: @weather-rain;
+}
+
+#custom-weather.snow {
+    color: @weather-snow;
+}
+
+#custom-weather.fog {
+    color: @weather-fog;
+}
+
+#custom-weather.haze {
+    color: @weather-haze;
+}
+
+#custom-weather.dust {
+    color: @weather-dust;
+}
+
+#custom-weather.hot {
+    color: @weather-hot;
+    text-shadow: 0 0 10px rgba(231, 76, 60, 0.7);
+}
+
+#custom-weather.cold {
+    color: @weather-cold;
+}
+
+/* Tooltip */
+tooltip {
+    background: rgba(0, 0, 0, 0.8);
+    border-radius: 8px;
+    padding: 10px;
+}

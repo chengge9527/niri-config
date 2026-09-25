@@ -1,0 +1,130 @@
+/* 
+   Importing colors from theme directory
+*/
+
+@define-color bar-bg transparent;            /*rgba(0, 0, 0, 0);  半透明黑色背景 */
+@define-color module-bg rgba(0, 0, 0, 0.5);  /*rgba(255, 255, 255, 0.3);  模块背景 */
+@define-color text-color #ffffff;
+@define-color shadow-color rgba(0, 0, 0, 0.4);
+
+*{
+    font-family:    JetBrainsMono Nerd Font;
+    font-size: 16px; 
+    font-weight: 600;
+}
+
+#custom-launcher {
+    color: #89b4fa;
+    margin-left: 20px;
+}
+
+#window {
+    padding: 0px 20px 0px 0px;
+}
+
+#waybar {
+    /* 确保 Waybar 容器本身有背景，避免阴影穿透 */
+    background-color: @bar-bg;
+    color: @text-color;
+    padding: 0;
+    margin: 0;
+    border: none;
+}
+
+/* 针对 GTK4/Libadwaita 的通用 box 样式 */
+#waybar > box {
+    background-color: transparent;
+    border-radius: 16px;
+    padding: 4px 12px;
+    /* 使用 box-shadow 时，确保背景不透明或部分透明以支撑阴影 */
+    /* box-shadow: 0 4px 12px @shadow-color; */
+    margin: 0; /* 移除默认 margin，由父级控制 */
+}
+
+/* 模块容器（左、中、右） */
+.modules-left, .modules-center, .modules-right {
+    background-color: @module-bg;
+    border-radius: 12px;
+    padding: 0 8px;
+    margin: 2px; /* 模块之间的间距 */
+    /*transition: all 0.2s ease;  平滑过渡效果 */
+}
+
+/* 可选：悬停效果提升用户体验 
+.modules-left:hover, .modules-center:hover, .modules-right:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+*/
+
+/* 确保模块内的文本颜色继承 
+.modules-left label, .modules-center label, .modules-right label {
+    color: @text-color;
+    font-weight: bold;
+}
+*/
+
+/* 整个工作区容器 */
+#workspaces {
+    background-color: transparent;
+    margin: 0 4px;
+}
+
+/* 1. 默认状态（后台有窗口运行） */
+#workspaces button {
+    color: #a6adc8;            /* 浅灰色，因为有窗口，所以亮度稍微高一点 */
+    padding: 0;            
+    min-width: 24px;   
+    min-height: 24px;  
+    transition: color 0.2s ease;
+    box-shadow: none;
+    text-shadow: none;
+    border: none;
+    background: transparent;
+    margin: 0 2px;
+}
+
+/* 2. 【新增】没有任何窗口的空工作区 */
+#workspaces button.empty {
+    color: rgba(255, 255, 255, 0.3); /* 没窗口时，颜色暗下来，降低存在感 */
+}
+
+/* 3. 鼠标悬停时 */
+#workspaces button:hover {
+    color: #cdd6f4;            
+}
+
+/* 4. 当前正在使用（激活）的工作区 */
+#workspaces button.active {
+    color: #89b4fa;            /* 亮蓝色 */
+}
+
+#network,
+#cpu,
+#memory,
+#pulseaudio,
+#tray {
+    margin-right: 13px;
+}
+
+#clock {
+    padding: 0px 20px 0px 20px;
+}
+
+#network {
+    padding: 0px 0px 0px 20px;
+}
+
+#inhibitor {
+    margin-right: 20px;
+    color: #E0E0E0;
+}
+
+#inhibitor.activated{
+    color: #FF8900;
+}
+
+tooltip {
+   background: rgba(0, 0, 0, 0.8);
+   border-radius: 8px;
+   padding: 10px;
+}
