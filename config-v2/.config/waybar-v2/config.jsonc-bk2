@@ -1,0 +1,44 @@
+{
+    "id": "bar-0",
+    "name": "bar-niri",
+    "layer": "top",
+    // "exclusive": false,
+    // "position": "top",
+    // "mode": "dock",
+    "height": 32,
+    "margin": 0,
+    "margin-top": 6,
+
+    "include": [
+        "$HOME/.config/waybar/modules.jsonc"
+    ],
+
+    "modules-left": [
+        "custom/launcher",
+        "niri/workspaces",
+        "niri/window"
+    ],
+
+    "modules-center": [
+        "clock"
+    ],
+
+"modules-right": [
+    "network",
+    "custom/weather",
+    "cpu",
+    "memory",
+    "pulseaudio",
+    "group/tray-inhibitor" // 创建一个组
+],
+
+// 在配置文件下方定义这个组包含哪些模块
+"group/tray-inhibitor": {
+    "orientation": "inherit",
+    "modules": [
+        "tray",
+        "inhibitor"
+    ]
+}
+}
+

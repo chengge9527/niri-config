@@ -1,0 +1,16 @@
+@define-color bar-bg transparent;            /*rgba(0, 0, 0, 0);  半透明黑色背景 */
+@define-color module-bg rgba(0, 0, 0, 0.5);  /*rgba(255, 255, 255, 0.3);  模块背景 */
+@define-color text-color #ffffff;
+@define-color shadow-color rgba(0, 0, 0, 0.4);
+
+/* 基础设置 */
+@define-color weather-clear #f1c40f;      /* 晴天 - 金黄色 */
+@define-color weather-clouds #f1c40f;     /* 多云 - 灰色 */
+@define-color weather-thunderstorm #8e44ad; /* 雷雨 - 紫色 */
+@define-color weather-rain #3498db;       /* 雨 - 蓝色 */
+@define-color weather-snow #ecf0f1;       /* 雪 - 白色/浅灰 */
+@define-color weather-fog #bdc3c7;        /* 雾 - 浅灰 */
+@define-color weather-haze #d35400;       /* 霾 - 橙色 */
+@define-color weather-dust #e67e22;       /* 尘 - 棕橙色 */
+@define-color weather-hot #e74c3c;        /* 热 - 红色 */
+@define-color weather-cold #2980b9;       /* 冷 - 深蓝色 */
