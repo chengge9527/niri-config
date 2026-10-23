@@ -1,0 +1,193 @@
+@import "color.css";
+
+* {
+    font-family: "JetBrainsMono NF";
+    font-size: 16px;
+    font-weight: 700;
+}
+
+window#waybar {
+    background-color: transparent;
+    border: none;
+}
+
+window#waybar > box {
+    margin: 0 10px;
+    padding: 0;
+    color: #c0caf5;
+}
+
+/* ----------------------------------------- 左侧 模块设置 开始 ----------------------------------------- */
+
+/* 1. 左侧和中间保持整体胶囊，或者根据需要调整 */
+.modules-left,
+.modules-center {
+    background: rgba(26, 27, 38, 0.75);
+    border: 1px solid rgba(122, 162, 247, 0.3);
+    border-radius: 16px;
+    padding: 0 12px;
+    /* margin: 0 2px; */
+}
+
+#custom-launcher {
+    /* padding-left: 0px; */
+    padding-right: 8px;
+    color: #7aa2f7;
+}
+
+#workspaces {
+    background: transparent;
+}
+
+#workspaces button {
+    color: #565f89;
+    padding: 0;
+    min-width: 26px;
+    min-height: 26px;
+    transition: color 0.2s ease;
+    box-shadow: none;
+    text-shadow: none;
+    border: none;
+    background: transparent;
+}
+
+#workspaces button.empty {
+    color: rgba(86, 95, 137, 0.75);
+}
+
+#workspaces button:hover {
+    color: #c0caf5;
+}
+
+#workspaces button.active {
+    color: #bb9af7;
+}
+
+/* ----------------------------------------- 左侧 模块设置 结束 ----------------------------------------- */
+
+/* ----------------------------------------- 中间 模块设置 开始 ----------------------------------------- */
+
+/* .modules-center { */
+/*     background: rgba(30, 30, 46, 0.7); */
+/*     border: 1px solid rgba(255, 255, 255, 0.1); */
+/*     border-radius: 16px; */
+/*     padding: 0 12px; */
+/*     margin: 0 2px; */
+/* } */
+
+/* ----------------------------------------- 中间 模块设置 结束 ----------------------------------------- */
+
+/* ----------------------------------------- 右侧 模块设置 开始 ----------------------------------------- */
+
+/* 2. 取消右侧容器整体的背景，让其内部子模块独立 */
+.modules-right {
+    background: transparent;
+    border: none;
+    padding: 0;
+    margin: 0;
+}
+
+/* 3. 为右侧的每一个模块设置独立的胶囊样式 */
+#network,
+#custom-weather,
+#cpu,
+#memory,
+#pulseaudio,
+#tray {
+    background: rgba(26, 27, 38, 0.75);
+    border: 1px solid rgba(122, 162, 247, 0.3);
+    border-radius: 16px;       /* 胶囊圆角 */
+    padding: 0 12px;           /* 左右内边距，控制胶囊宽度 */
+    margin: 0 2px;             /* 模块之间的间距 */
+}
+
+#inhibitor {
+    background: rgba(26, 27, 38, 0.75);
+    border: 1px solid rgba(122, 162, 247, 0.3);
+    border-radius: 16px;
+    padding-left: 8px;
+    padding-right: 12px;
+    /* margin: 0 2px; */
+}
+
+/* ----------------------------------------- 右侧 模块设置 结束 ----------------------------------------- */
+
+/* 模块独立颜色 */
+#clock {
+    color: #bb9af7;
+}
+
+#network {
+    color: #7dcfff;
+}
+
+#cpu {
+    color: #9ece6a;
+}
+
+#memory {
+    color: #e0af68;
+}
+
+#pulseaudio {
+    color: #ff9e64;
+}
+
+#tray,
+#inhibitor {
+    color: #c0caf5;
+}
+
+#inhibitor.activated {
+    color: #f7768e;
+}
+
+/* Weather */
+#custom-weather.clear {
+    color: @weather-clear;
+}
+
+#custom-weather.clouds {
+    color: @weather-clouds;
+}
+
+#custom-weather.thunderstorm {
+    color: @weather-thunderstorm;
+    /* text-shadow: 0 0 8px rgba(142, 68, 173, 0.6); */
+}
+
+#custom-weather.rain {
+    color: @weather-rain;
+}
+
+#custom-weather.snow {
+    color: @weather-snow;
+}
+
+#custom-weather.fog {
+    color: @weather-fog;
+}
+
+#custom-weather.haze {
+    color: @weather-haze;
+}
+
+#custom-weather.dust {
+    color: @weather-dust;
+}
+
+#custom-weather.hot {
+    color: @weather-hot;
+    /* text-shadow: 0 0 10px rgba(231, 76, 60, 0.7); */
+}
+
+#custom-weather.cold {
+    color: @weather-cold;
+}
+
+/* Tooltip */
+tooltip {
+    background: rgba(0, 0, 0, 0.8);
+    border-radius: 8px;
+    padding: 10px;
+}

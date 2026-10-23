@@ -1,0 +1,11 @@
+/* 基础设置 */
+@define-color weather-clear #e0af68;       /* 晴天 - 暖金色 */
+@define-color weather-clouds #9aa5ce;      /* 多云 - 雾霾蓝灰 */
+@define-color weather-thunderstorm #bb9af7;/* 雷雨 - 亮紫色 */
+@define-color weather-rain #7dcfff;        /* 雨 - 天蓝色 */
+@define-color weather-snow #c0caf5;        /* 雪 - 冰晶白蓝 */
+@define-color weather-fog #565f89;         /* 雾 - 深灰蓝 */
+@define-color weather-haze #ff9e64;        /* 霾 - 柔和橙色 */
+@define-color weather-dust #e0af68;        /* 尘 - 暗琥珀色 */
+@define-color weather-hot #f7768e;         /* 热 - 霓虹红 */
+@define-color weather-cold #7aa2f7;        /* 冷 - 极光蓝色 */
