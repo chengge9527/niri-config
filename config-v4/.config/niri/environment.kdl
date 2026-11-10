@@ -1,0 +1,12 @@
+environment {
+    // 桌面环境标识与基础 Wayland 规则
+    // XDG_CURRENT_DESKTOP "niri"
+    // XDG_SESSION_TYPE "wayland"
+
+    // Electron 与 Qt 渲染后端
+    // ELECTRON_OZONE_PLATFORM_HINT "auto"
+    QT_QPA_PLATFORM "wayland"
+    QT_QPA_PLATFORMTHEME "gtk3"
+    QT_WAYLAND_DISABLE_WINDOWDECORATION "1"
+
+}
